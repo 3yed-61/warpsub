@@ -36,7 +36,7 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config --global user.email "3yed1982@gmail.com"
+          git config --global user.email "3yed1361@gmail.com"
           git config --global user.name "3yed-61"
 
       - name: Commit changes
