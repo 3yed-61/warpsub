@@ -1,6 +1,6 @@
 <?php
 
-    $getList = file_get_contents('https://raw.githubusercontent.com/ippscan/ippscanTEAM/main/warp?v1.'.time());
+    $getList = file_get_contents('https://raw.githubusercontent.com/ippscan/ippscanTEAM/main/gulagVPN?v1.'.time());
     $strings = explode("\n", $getList);
 
     $warp = "//profile-title: base64:V0FSUCAoM1lFRCk=\n";
