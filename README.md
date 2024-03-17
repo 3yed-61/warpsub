@@ -9,6 +9,7 @@ https://raw.githubusercontent.com/3yed-61/warpsub/main/export/warp
 
 
 
-![qrCode](https://github.com/3yed-61/warpsub/assets/122279300/f6589495-3506-4cfb-938f-d1db2dc4d070)
+![qrCode](https://github.com/3yed-61/warpsub/assets/122279300/4f85cd32-7c0e-40ec-b7da-9cf1238343d2)
+
 
 
