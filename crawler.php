@@ -8,7 +8,7 @@
     $warp .= "//subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=0\n";
     $warp .= "//support-url: https://github.com/3yed-61\n";
     $warp .= "//profile-web-page-url: https://github.com/3yed-61\n\n";
-   
+    $warp://auto?ifp=10-20&ifps=40-100&ifpd=10-20#Warp_10-20_40-100_10-20
 
    $i = 1;
 $pattern = '/^warp:\/\/.*$/';
