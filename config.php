@@ -3,7 +3,7 @@
 $sourceUrl = 'https://raw.githubusercontent.com/3yed-61/warp-ip/main/export/warp-ip';
 
 // Define the path to the configuration file and the output path
-$configFilePath = 'main/config_file.json'; // Update this path
+$configFilePath = 'sample/warp-sample.json'; // Update this path
 $outputFilePath = 'export/warp-s.json';
 
 // Ensure the export directory exists
