@@ -4,7 +4,7 @@ $sourceUrl = 'https://raw.githubusercontent.com/3yed-61/warp-ip/main/export/warp
 
 // Define the path to the configuration file and the output path
 $configFilePath = '/config_file.json';
-$outputFilePath = 'export/warp.json';
+$outputFilePath = 'export/warp-s.json';
 
 // Fetch the new IPs and ports
 $newData = file_get_contents($sourceUrl);
