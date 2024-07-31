@@ -6,17 +6,22 @@ $sourceUrl = 'https://raw.githubusercontent.com/3yed-61/warp-ip/main/export/warp
 $configFilePath = '/config_file.json'; // Update this path
 $outputFilePath = 'export/warp-s.json';
 
+// Ensure the export directory exists
+if (!file_exists(dirname($outputFilePath))) {
+    mkdir(dirname($outputFilePath), 0777, true);
+}
+
 // Fetch the new IPs and ports
 $newData = file_get_contents($sourceUrl);
 if ($newData === FALSE) {
-    die("Error fetching new IPs and ports.");
+    die("Error fetching new IPs and ports from URL: $sourceUrl");
 }
 
 // Assume the new data is in the format:
 // IP1:PORT1\nIP2:PORT2
 $newLines = explode("\n", trim($newData));
 if (count($newLines) < 2) {
-    die("Error: Not enough IP:PORT pairs provided.");
+    die("Error: Not enough IP:PORT pairs provided. Data received: $newData");
 }
 
 // Split the first and second IP:PORT pairs
@@ -26,7 +31,7 @@ list($newIP2, $newPort2) = explode(':', $newLines[1]);
 // Read the existing configuration file
 $config = file_get_contents($configFilePath);
 if ($config === FALSE) {
-    die("Error reading configuration file.");
+    die("Error reading configuration file at: $configFilePath");
 }
 
 // Replace the IP addresses and ports in the configuration
@@ -39,8 +44,9 @@ $updatedConfig = preg_replace(
 );
 
 // Save the updated configuration to the output file
-if (!file_put_contents($outputFilePath, $updatedConfig)) {
-    die("Error saving updated configuration.");
+$result = file_put_contents($outputFilePath, $updatedConfig);
+if ($result === FALSE) {
+    die("Error saving updated configuration to: $outputFilePath");
 }
 
 echo "Configuration updated successfully.";
