@@ -1,22 +1,50 @@
-name: config.php
+name: "config"
 
-# Run the workflow every 24 hours
 on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
   schedule:
     - cron: '0 0 * * *'
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
-  update-config:
+  build:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        shell: bash -e {0}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          NODE_VERSION: '20'
 
-      - name: Set up PHP
+      - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.0' # Set this to the PHP version you need
+          php-version: '8.0'
 
-      - name: Run update script
-        run: php path/to/your/update-script.php
+      - name: Execute PHP script
+        run: php config.php
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "3yed1361@gmail.com"
+          git config --global user.name "3yed-61"
+
+      - name: Commit changes
+        run: |
+          git add -A
+          git diff --cached --quiet || git commit -m "💡 Automatic update - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M')"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
