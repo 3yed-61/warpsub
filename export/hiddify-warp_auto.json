@@ -3,5 +3,5 @@
 //subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531
 
 
-warp://p1@ip1?ifp=1-3#WarpInWarp✅&&detour=warp://p2@ip2ifp=1-3#Warp 🇮🇷 IP
+warp://p1@ip1?ifp=1-3#WarpInWarp🟢&&detour=warp://p2@ip2ifp=1-3#Warp 🇮🇷 IP
 
