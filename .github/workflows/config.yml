@@ -1,0 +1,22 @@
+name: config.php
+
+# Run the workflow every 24 hours
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  update-config:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0' # Set this to the PHP version you need
+
+      - name: Run update script
+        run: php path/to/your/update-script.php
