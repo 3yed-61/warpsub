@@ -3,7 +3,7 @@
 $sourceUrl = 'https://raw.githubusercontent.com/3yed-61/warp-ip/main/export/warp-ip';
 
 // Define the path to the configuration file and the output path
-$configFilePath = '/config_file.json';
+$configFilePath = '/config_file.json'; // Update this path
 $outputFilePath = 'export/warp-s.json';
 
 // Fetch the new IPs and ports
@@ -13,9 +13,15 @@ if ($newData === FALSE) {
 }
 
 // Assume the new data is in the format:
-// IP1:PORT1
-// IP2:PORT2
-list($newIP1, $newPort1, $newIP2, $newPort2) = explode("\n", trim($newData));
+// IP1:PORT1\nIP2:PORT2
+$newLines = explode("\n", trim($newData));
+if (count($newLines) < 2) {
+    die("Error: Not enough IP:PORT pairs provided.");
+}
+
+// Split the first and second IP:PORT pairs
+list($newIP1, $newPort1) = explode(':', $newLines[0]);
+list($newIP2, $newPort2) = explode(':', $newLines[1]);
 
 // Read the existing configuration file
 $config = file_get_contents($configFilePath);
@@ -24,9 +30,9 @@ if ($config === FALSE) {
 }
 
 // Replace the IP addresses and ports in the configuration
-// Modify the regex pattern to match the exact format in your config
+// Regex assumes IP:PORT format and replaces only the first two occurrences
 $updatedConfig = preg_replace(
-    ['/(\d{1,3}\.){3}\d{1,3}:\d{4}/', '/(\d{1,3}\.){3}\d{1,3}:\d{4}/'],
+    ['/(\d{1,3}\.){3}\d{1,3}:\d+/', '/(\d{1,3}\.){3}\d{1,3}:\d+/'],
     [$newIP1 . ':' . $newPort1, $newIP2 . ':' . $newPort2],
     $config,
     2
@@ -38,3 +44,4 @@ if (!file_put_contents($outputFilePath, $updatedConfig)) {
 }
 
 echo "Configuration updated successfully.";
+?>
