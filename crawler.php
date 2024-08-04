@@ -5,7 +5,7 @@ $strings = explode("\n", $getList);
 
     $warp = "//profile-title: base64:8J+XvcKzxrPOnvCdkp8g8JOEgvCThoM=\n";
     $warp .= "//profile-update-interval: 1\n";
-    $warp .= "//subscription-userinfo: upload=5368709120; download=545097156608; total=10737418240000000; expire=0\n";
+    $warp .= "//subscription-userinfo: upload=5368709120; download=545097156608; total=955630223360; expire=1762677732\n";
     $warp .= "//profile-web-page-url: https://github.com/3yed-61\n\n";
 
 $warp .= "warp://@auto4/?ifp=1-3&ifpm=m4#Local&&detour=warp://@auto4/?ifp=1-3&ifpm=m6#WoW";
