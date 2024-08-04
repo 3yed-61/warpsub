@@ -4,7 +4,7 @@ $getList = file_get_contents('https://raw.githubusercontent.com/3yed82/warp-lP/m
 $strings = explode("\n", $getList);
 
 $warp = "//profile-title: base64:8J+XvcKzxrPOnvCdkp/wk4SC8JOGgw==\n";
-$warp .= "//profile-update-interval: 24\n";
+$warp .= "//profile-update-interval: 1\n";
 $warp .= "//subscription-userinfo: upload=5368709120; download=545097156608; total=955630223360; expire=1762677732;\n";
 $warp .= "//support-url: https://github.com/3yed-61\n";
 
