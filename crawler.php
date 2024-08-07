@@ -8,7 +8,7 @@ $strings = explode("\n", $getList);
     $warp .= "//subscription-userinfo: upload=5368709120; download=545097156608; total=955630223360; expire=1762677732\n";
     $warp .= "//profile-web-page-url: https://github.com/3yed-61\n\n";
 
-$warp .= "warp://@auto4/?ifp=20-35&ifpm=m3#Local&&detour=warp://@auto4/?ifp=40-80&ifpm=m3#WoW";
+$warp .= "warp://@auto4/?ifp=20-35&ifpm=m3#Local&&detour=warp://@auto4/?ifpm=m3#WoW";
 
 $i = 1;
 $pattern = '/^warp:\/\/.*$/';
