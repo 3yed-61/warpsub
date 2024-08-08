@@ -3,7 +3,7 @@
    </p> 
 <div align="center" style="font-family: Arial, sans-serif; color: #333;">
     <h2>🔗 <a href="https://github.com/hiddify/hiddify-next/releases" target="_blank" style="color: #4CAF50; text-decoration: none;">Hiddify</a> Subscription Link</h2>
-    </div>
+   
 
 **SUB LINK**:
 
