@@ -18,4 +18,4 @@ https://raw.githubusercontent.com/3yed-61/warpsub/main/export/warp
 
 <p align="center"> 
    
- <img  width="70%" src="(https://github.com/3yed-61/warpsub/blob/main/qrCode.png)" /></p>
+ <img  width="70%" src="https://github.com/3yed-61/warpsub/blob/main/qrCode.png" /></p>
