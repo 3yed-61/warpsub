@@ -1,9 +1,7 @@
 <p align="center">   
    <img  width=70% src="https://github.com/mansor427/IpScanner/assets/104245967/08ccb46c-51a3-4d16-a0a4-27fb7492d35d" />
    </p> 
-   هیدیفای رو دنلود و نصب کنید
-   !(https://img.shields.io/github/downloads/hiddify/hiddify-next/v2.1.5/total?style=flat-square&logo=github)](https://github.com/termux/termux-app/releases)
-
+ *hiddify subscription link
 
 
 **SUB LINK**:
