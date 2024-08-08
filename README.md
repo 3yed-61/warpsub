@@ -1,8 +1,10 @@
 <div align="center" style="font-family: Arial, sans-serif; color: #333;">
-    <h2> <a href="https://github.com/hiddify/hiddify-next/releases" target="_blank" style="color: #4CAF50; text-decoration: none;">
+    <h2>🔗 <a href="https://github.com/hiddify/hiddify-next/releases" target="_blank" style="color: #4CAF50; text-decoration: none;">
         <img src="https://avatars.githubusercontent.com/u/126981719" alt="Hiddify Icon" width="30" style="vertical-align: middle; border-radius: 50%; margin-right: 8px;">
-        Hiddify App Download
-        </div>
+        Hiddify
+    </a> Software Download</h2>
+    <p>برای دانلود آخرین نسخه نرم‌افزار Hiddify روی نام <strong>Hiddify</strong> در بالا کلیک کنید.</p>
+</div>
   <p align="center">   
    <img  width=70% src="https://github.com/mansor427/IpScanner/assets/104245967/08ccb46c-51a3-4d16-a0a4-27fb7492d35d" />
    </p> 
