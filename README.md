@@ -18,5 +18,4 @@ https://raw.githubusercontent.com/3yed-61/warpsub/main/export/warp
 
 <p align="center"> 
    
- <img  width="70%" src="[https://github.com/arshiacomplus/WarpScanner/blob/main/Arshia.jpg](https://github.com/3yed-61/warpsub/blob/main/qrCode.png)" />
-</p>
+ <img  width="70%" src="(https://github.com/3yed-61/warpsub/blob/9edbc73eced506901a9004ef0ccd8377aa6bb164/qrCode.png)" /></p>
