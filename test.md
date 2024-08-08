@@ -1,14 +1,9 @@
 <p align="center">   
    <img  width=70% src="https://github.com/mansor427/IpScanner/assets/104245967/08ccb46c-51a3-4d16-a0a4-27fb7492d35d" />
    </p> 
- <h2>✨ Hiddify Subscription Link ✨</h2>
- <a href="https://github.com/hiddify/hiddify-next/releases" target="_blank" style="text-decoration: none;">
-        <div style="background-color: #4CAF50; color: white; padding: 12px 24px; border-radius: 8px; display: inline-block; font-size: 18px; margin-top: 10px;">
-            📥 Download Hiddify
-        </div>
-    </a>
-</div>
-</p> 
+<div align="center" style="font-family: Arial, sans-serif; color: #333;">
+    <h2>🔗 <a href="https://github.com/hiddify/hiddify-next/releases" target="_blank" style="color: #4CAF50; text-decoration: none;">Hiddify</a> Subscription Link</h2>
+    </div>
 
 **SUB LINK**:
 
