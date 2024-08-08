@@ -1,9 +1,9 @@
 <div align="center" style="font-family: Arial, sans-serif; color: #333;">
-    <h2>✨ Hiddify Subscription Link ✨</h2>
-    <p><strong>SUB LINK:</strong></p>
-    <div style="background-color: #f0f0f0; padding: 10px; border-radius: 8px; display: inline-block; max-width: 90%; word-wrap: break-word;">
-        <code>https://raw.githubusercontent.com/3yed-61/warpsub/main/export/warp</code>
-    </div>
-    <p><strong>QR Code:</strong></p>
-    <img src="https://github.com/3yed-61/warpsub/blob/main/qrCode.png" alt="QR Code" width="300" style="border-radius: 10px; border: 1px solid #ddd;"/>
+    <h2>🔗 Hiddify Software Download</h2>
+    <p>برای دانلود آخرین نسخه نرم‌افزار Hiddify روی دکمه زیر کلیک کنید:</p>
+    <a href="https://github.com/hiddify/hiddify-next/releases" target="_blank" style="text-decoration: none;">
+        <div style="background-color: #4CAF50; color: white; padding: 12px 24px; border-radius: 8px; display: inline-block; font-size: 18px; margin-top: 10px;">
+            📥 Download Hiddify
+        </div>
+    </a>
 </div>
