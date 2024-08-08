@@ -2,7 +2,7 @@
    <img  width=70% src="https://github.com/mansor427/IpScanner/assets/104245967/08ccb46c-51a3-4d16-a0a4-27fb7492d35d" />
    </p> 
 <div align="center" style="font-family: Arial, sans-serif; color: #333;">
-    <h2>🔗 <a href="https://github.com/hiddify/hiddify-next/releases" target="_blank" style="color: #4CAF50; text-decoration: none;"> Hiddify</a> Subscription Link ✨</h2>
+    <h2>🔗 <a href="https://github.com/hiddify/hiddify-next/releases" target="_blank" style="color: #4CAF50; text-decoration: none;"> Hiddify</a> WARP SUB ✨</h2>
    
 
 **SUB LINK**:
