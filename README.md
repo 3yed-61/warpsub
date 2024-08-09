@@ -1,5 +1,5 @@
 <div align="center" style="font-family: Arial, sans-serif; color: #333;">
-    <h2>🔗 <a href="https://github.com/hiddify/hiddify-next/releases" target="_blank" style="color: #4CAF50; text-decoration: none;">
+    <h2><a href="https://github.com/hiddify/hiddify-next/releases" target="_blank" style="color: #4CAF50; text-decoration: none;">
         <img src="https://avatars.githubusercontent.com/u/126981719" alt="Hiddify Icon" width="30" style="vertical-align: middle; border-radius: 50%; margin-right: 8px;">
         Hiddify
     </a> Software Download</h2>
