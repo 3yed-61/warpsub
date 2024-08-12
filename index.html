@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiddify Warp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            height: 100vh;
+            background-color: #282c34;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .logo {
+            margin-bottom: 50px;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 100px;
+        }
+
+        .container {
+            background-color: #3b3f46;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+            overflow: hidden;
+        }
+
+        details {
+            border: 1px solid #666;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: #444851;
+            color: #f1f1f1;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        summary {
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            outline: none;
+        }
+
+        details[open] {
+            background-color: #555a63;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+<div class="logo">
+    <img src="https://raw.githubusercontent.com/hiddify/hiddify-next/main/assets/images/tray_icon_connected.png" alt="Logo">
+</div>
+
+<div class="container">
+    <details>
+        <summary>DOWNLOAD APP</summary>
+        <a href="https://github.com/hiddify/hiddify-next/releases" target="_blank">
+            <img src="https://raw.githubusercontent.com/hiddify/hiddify-next/main/assets/images/tray_icon_dark.png" alt="Sample Image">
+        </a>
+        </br>
+        <h6>And Install</h6>
+    </details>
+    <details>
+        <summary>COPY SUB </summary>
+        <h6>Sub Link</h6>
+        </br>
+        <a href="#" onclick="copyToClipboard('https://raw.githubusercontent.com/3yed-61/warpsub/main/export/warp')">
+            <i class="fa-3x fa-duotone fa-solid fa-copy"></i>
+        </a>
+    </details>
+    <details>
+        <summary>Final</summary>
+        <img src="https://raw.githubusercontent.com/3yed-61/warpsub/main/images/1.png" alt="Sample Image">
+        <br/>
+        <img src="https://raw.githubusercontent.com/3yed-61/warpsub/main/images/2.png" alt="Sample Image">
+        </br>
+        </br>
+        <p>And that's it</p>
+    </details>
+</div>
+
+<script>
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        alert('Link copied to clipboard!');
+    }, function(err) {
+        console.error('Could not copy text: ', err);
+    });
+}
+</script>
+</body>
+</html>
