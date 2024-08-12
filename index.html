@@ -48,7 +48,7 @@
             background-color: #444851;
             color: #f1f1f1;
             transition: background-color 0.3s ease, color 0.3s ease;
-            max-height: 200px;
+            max-height: 350px;
             overflow-y: auto;
         }
 
@@ -126,6 +126,17 @@ function copyToClipboard(text) {
         console.error('Could not copy text: ', err);
     });
 }
+    document.querySelectorAll('details').forEach(detail => {
+    detail.addEventListener('toggle', function() {
+        if (this.open) {
+            document.querySelectorAll('details').forEach(otherDetail => {
+                if (otherDetail !== this) {
+                    otherDetail.removeAttribute('open');
+                }
+            });
+        }
+    });
+});
 </script>
 </body>
 </html>
