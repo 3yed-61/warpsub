@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiddify Warp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background: #0f0c29;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        .logo {
+            width: 150px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff00cc, #3333ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .steps {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .step {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            width: 90%;
+            max-width: 300px;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+        .step:hover {
+            transform: translateY(-5px);
+        }
+        .step-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff00cc, #3333ff);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        #qr-code {
+            width: 100px;
+            height: 100px;
+            margin-top: 1rem;
+        }
+        #walkthrough {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .walkthrough-content {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 80%;
+            text-align: center;
+            color: #333;
+        }
+        .walkthrough-step {
+            display: none;
+        }
+        .walkthrough-step.active {
+            display: block;
+        }
+        .walkthrough-buttons {
+            margin-top: 1rem;
+        }
+        @media (min-width: 768px) {
+            .steps {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .step {
+                width: 30%;
+                margin-bottom: 0;
+            }
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+            transition: transform 0.3s ease;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background: #0f0c29;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin: 1rem;
+            text-align: left;
+        }
+        .social-links {
+            display: flex;
+            justify-content: flex-start;
+        }
+        .social-link {
+            color: #fff;
+            margin-right: 15px;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        .social-link:hover {
+            transform: scale(1.1);
+        }
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 1rem;
+            font-size: 0.9rem;
+            text-align: center;
+            width: 100%;
+        }
+        .footer-bottom .social-links {
+            margin-bottom: 10px;
+        }
+        .footer-bottom p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="container">
+        <img src="https://raw.githubusercontent.com/hiddify/hiddify-next/main/assets/images/tray_icon_connected.png" alt="Hiddify Warp Logo" class="logo">
+        <h1>Hiddify Warp</h1>
+        <p>Secure your connection in three easy steps!</p>
+        
+        <div class="steps">
+            <div class="step">
+                <div class="step-icon">📥</div>
+                <h3>Download</h3>
+                <p>Get the app from GitHub</p>
+                <a href="https://github.com/hiddify/hiddify-next/releases" target="_blank" class="btn">Download</a>
+            </div>
+            <div class="step">
+                <div class="step-icon">🔗</div>
+                <h3>Subscribe</h3>
+                <p>Scan QR or copy link</p>
+                <img id="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://raw.githubusercontent.com/3yed-61/warpsub/main/export/warp" alt="QR Code">
+                <br><br>
+                <a href="#" onclick="copyToClipboard('https://raw.githubusercontent.com/3yed-61/warpsub/main/export/warp')">
+                    <i class="fa-solid fa-copy"></i>
+                </a>
+            </div>
+            <div class="step">
+                <div class="step-icon">🚀</div>
+                <h3>Connect</h3>
+                <p>Set up and enjoy secure browsing</p>
+                <button class="btn" onclick="startWalkthrough()">Start Walkthrough</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="walkthrough">
+    <div class="walkthrough-content">
+        <div class="walkthrough-step active">
+            <h3>Step 1: Open the App</h3>
+            <p>Launch the app on your device.</p>
+        </div>
+        <div class="walkthrough-step">
+            <h3>Step 2: Add Configuration</h3>
+            <p>Tap the '+' button to add a new configuration.</p>
+            <img src="https://raw.githubusercontent.com/3yed-61/warpsub/main/images/1.png" alt="Step 1 of final instructions">
+        </div>
+        <div class="walkthrough-step">
+            <h3>Step 3: Scan QR Code</h3>
+            <p>Scan the QR code provided earlier.</p>
+            <img src="https://raw.githubusercontent.com/3yed-61/warpsub/main/images/2.png" alt="Step 2 of final instructions">
+            <hr>
+            <p>Or enter the copied sublink.</p>
+        </div>
+        <div class="walkthrough-step">
+            <h3>Step 4: Connect</h3>
+            <p>Tap the 'Connect' button to secure your connection.</p>
+			<img src="https://raw.githubusercontent.com/3yed-61/warpsub/main/images/3.png" alt="Step 2 of final instructions">
+        </div>
+        <div class="walkthrough-buttons">
+            <button class="btn" onclick="prevStep()">Previous</button>
+            <button class="btn next-btn" onclick="nextStep()">Next</button>
+            <button class="btn" onclick="closeWalkthrough()">Close</button>
+        </div>
+    </div>
+</div>
+
+    <footer>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h4>Follow Me</h4>
+            <div class="social-links">
+                <a href="https://github.com/3yed-61/warpsub" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://x.com/_3yed_" target="_blank" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com/_.3yed._" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-column">
+            <p>Internet for everyone or no one</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        Made with 💜 by 3λΞĐ
+    </div>
+	
+</footer>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>    
+    <script>
+	    let currentStep = 0;
+    const steps = document.querySelectorAll('.walkthrough-step');
+
+    function startWalkthrough() {
+        currentStep = 0;
+        steps.forEach(step => step.classList.remove('active'));
+        steps[currentStep].classList.add('active');
+        document.getElementById('walkthrough').style.display = 'flex';
+        updateButtonVisibility();
+    }
+
+    function closeWalkthrough() {
+        document.getElementById('walkthrough').style.display = 'none';
+    }
+
+    function nextStep() {
+        steps[currentStep].classList.remove('active');
+        currentStep = Math.min(currentStep + 1, steps.length - 1);
+        steps[currentStep].classList.add('active');
+        updateButtonVisibility();
+    }
+
+    function prevStep() {
+        steps[currentStep].classList.remove('active');
+        currentStep = Math.max(currentStep - 1, 0);
+        steps[currentStep].classList.add('active');
+        updateButtonVisibility();
+    }
+
+    function updateButtonVisibility() {
+    const nextBtn = document.querySelector('.next-btn');
+    const closeBtn = document.querySelector('.walkthrough-buttons .btn:last-child');
+
+    if (currentStep === steps.length - 1) {
+        nextBtn.style.display = 'none';
+        closeBtn.style.display = 'inline-block';
+    } else {
+        nextBtn.style.display = 'inline-block';
+        closeBtn.style.display = 'none';
+    }
+}
+
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: '#ffffff' },
+            shape: {
+                type: 'circle',
+                stroke: { width: 0, color: '#000000' },
+                polygon: { nb_sides: 5 },
+            },
+            opacity: {
+                value: 0.5,
+                random: false,
+                anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
+            },
+            size: {
+                value: 3,
+                random: true,
+                anim: { enable: false, speed: 40, size_min: 0.1, sync: false }
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: '#ffffff',
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 6,
+                direction: 'none',
+                random: false,
+                straight: false,
+                out_mode: 'out',
+                bounce: false,
+                attract: { enable: false, rotateX: 600, rotateY: 1200 }
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: { enable: true, mode: 'repulse' },
+                onclick: { enable: true, mode: 'push' },
+                resize: true
+            },
+            modes: {
+                grab: { distance: 400, line_linked: { opacity: 1 } },
+                bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+                repulse: { distance: 200, duration: 0.4 },
+                push: { particles_nb: 4 },
+                remove: { particles_nb: 2 }
+            }
+        },
+        retina_detect: true
+    });
+
+	
+         function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert('Link copied to clipboard!');
+        }, () => {
+            alert('Failed to copy the link.');
+        });
+    }
+
+</script>
+</body>
+</html>
