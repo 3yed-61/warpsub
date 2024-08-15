@@ -250,7 +250,7 @@
                 <a href="https://x.com/_3yed_" target="_blank" class="social-link">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a href="https://instagram.com/_.3yed._" target="_blank" class="social-link">
+                <a href="https://www.instagram.com/_.3yed._" target="_blank" class="social-link" id="instagram-link">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
@@ -372,6 +372,15 @@
         });
     }
 
+        document.getElementById('instagram-link').addEventListener('click', function(event) {
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            window.location.href = "instagram://user?username=_.3yed._";
+        } else {
+            window.location.href = "https://www.instagram.com/_.3yed._";
+        }
+        event.preventDefault();
+    });
 </script>
 </body>
 </html>
