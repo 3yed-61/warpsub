@@ -6,7 +6,7 @@
     <p>برای دانلود آخرین نسخه نرم‌افزار روی  <strong>Hiddify</strong> در بالا کلیک کنید.</p>
 </div>
   <p align="center">   
-   <img  width=70% src="https://github.com/mansor427/IpScanner/assets/104245967/08ccb46c-51a3-4d16-a0a4-27fb7492d35d" />
+   <img  width=70% src="https://github.com/3yed-61/warpsub/blob/1e9fa0df21d00878653e25cbdfc49421092d1496/images/p.gif" />
    </p> 
    
 
